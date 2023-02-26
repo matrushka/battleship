@@ -16,9 +16,10 @@ export const letterToNumber = (input: string) => {
 };
 
 export const parseCoordinates = (input: string) => {
-  if (input.length !== 2) throw new Error(`Invalid input: ${input}.`);
+  if (input.length > 3) throw new Error(`Invalid input: ${input}.`);
   const chars = input.split("");
-  const x = letterToNumber(chars[0]) - 1;
-  const y = Number(chars[1]) - 1;
+  const [letter, ...digits] = chars;
+  const x = letterToNumber(letter) - 1;
+  const y = Number(digits.join("")) - 1;
   return [x, y];
 };

@@ -83,7 +83,10 @@
         </p>
         <input type="text" bind:this={textInput} />
         {#if inputFailed}
-          <p class="error">Make sure your input starts with a letter followed by a digit.</p>
+          <p class="error">
+            ⛔️ Make sure your input starts with a letter followed by a digit. Also the coordinates
+            you've entered must be within the board.
+          </p>
         {/if}
       </form>
     {/if}
